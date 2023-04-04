@@ -1,0 +1,115 @@
+@charset "utf-8";
+@font-face {
+  font-family: "Dovemayo_gothic";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  font-family: "Dovemayo_gothic";
+  font-size: 16px;
+  color: #232323;
+  --mx: 1080px;
+  letter-spacing: -1px;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+.inner {
+  max-width: var(--mx);
+  width: calc(100% - 1rem);
+  margin: 0 auto;
+}
+.hd {
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+}
+.hd_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 130px;
+}
+
+.logo a {
+  display: block;
+  width: 100%;
+}
+.gnb_wrap {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.gnb {
+  display: flex;
+}
+
+.gnb > li > a {
+  display: flex;
+  align-items: center;
+  background-color: #ddd;
+  width: 100px;
+  height: 50px;
+}
+/* sub_gnb 2dapth */
+.subGnb {
+  border: 1px solid red;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+.subGnb > li {
+  color: #000;
+  border: 2px solid darkred;
+  margin: 0 auto;
+  width: 1440px;
+}
+.subGnb > li > a {
+  display: block;
+  background-color: dodgerblue;
+  padding: 0.5rem 1rem;
+}
+.subGnb > li .dapth3 {
+  border: 1px solid red;
+}
+.dapth3 li {
+}
+.dapth3 li a {
+  display: block;
+  background-color: #ddd;
+  padding: 0.5rem 0;
+}
+.pageBtn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+  background-color: #fede22;
+  border: #fede22;
+  margin-right: 2rem;
+}
+.hd button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.hd button i {
+  font-size: 1.15rem;
+}
