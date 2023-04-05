@@ -56,11 +56,11 @@ img {
 .gnb > li > a {
   display: flex;
   align-items: center;
-  background-color: #ddd;
   width: 100px;
   height: 50px;
 }
 /* sub_gnb 2dapth */
+
 .subGnb {
   border: 1px solid red;
   position: absolute;
@@ -73,21 +73,27 @@ img {
   padding: 2rem 0;
   text-align: center;
 }
-.subGnb > li {
+.inner_con {
+  max-width: var(--mx);
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.subGnb .inner_con > li {
   color: #000;
   border: 2px solid darkred;
-  margin: 0 auto;
-  width: 1440px;
+  width: 100%;
 }
-.subGnb > li > a {
+.subGnb .inner_con > li > a {
   display: block;
   background-color: dodgerblue;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 1rem;
 }
-.subGnb > li .dapth3 {
-  border: 1px solid red;
+.subGnb .inner_con > li .dapth3 {
 }
 .dapth3 li {
+  font-size: 0.85rem;
 }
 .dapth3 li a {
   display: block;
