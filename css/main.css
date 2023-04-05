@@ -23,11 +23,14 @@ img {
   width: calc(100% - 1rem);
   margin: 0 auto;
 }
+/* 커스텀 */
+/* header */
 .hd {
   border-bottom: 1px solid #ddd;
   background-color: #fff;
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 .hd_wrap {
   display: flex;
@@ -36,13 +39,15 @@ img {
 }
 
 .logo {
-  width: 130px;
+  min-width: 100px;
+  max-width: 130px;
 }
 
 .logo a {
   display: block;
   width: 100%;
 }
+/* gnb */
 .gnb_wrap {
   display: flex;
   flex: 1;
@@ -59,19 +64,23 @@ img {
   width: 100px;
   height: 50px;
 }
+.gnb > li:hover .subGnb {
+  max-height: 800px;
+  padding: 2rem 0;
+  transition: max-height 0.4s, padding 0s;
+}
 /* sub_gnb 2dapth */
-
 .subGnb {
-  border: 1px solid red;
   position: absolute;
-  top: 50px;
+  top: 51px;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   background-color: #fff;
-  padding: 2rem 0;
   text-align: center;
+  max-height: 0;
+  overflow: hidden;
 }
 .inner_con {
   max-width: var(--mx);
@@ -82,22 +91,19 @@ img {
 }
 .subGnb .inner_con > li {
   color: #000;
-  border: 2px solid darkred;
   width: 100%;
 }
 .subGnb .inner_con > li > a {
   display: block;
-  background-color: dodgerblue;
   padding: 0.5rem 1rem 1rem;
 }
-.subGnb .inner_con > li .dapth3 {
-}
+
 .dapth3 li {
   font-size: 0.85rem;
+  background-color: #fff;
 }
 .dapth3 li a {
   display: block;
-  background-color: #ddd;
   padding: 0.5rem 0;
 }
 .pageBtn {
@@ -116,6 +122,257 @@ img {
   background-color: transparent;
   cursor: pointer;
 }
+
 .hd button i {
   font-size: 1.15rem;
+}
+.hamBtn {
+  display: none;
+}
+/* 메인이미지 */
+.mainVisuCon {
+  position: relative;
+  transform: translateY(51px);
+}
+.mainVisuCon::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffef6b;
+  left: 0;
+  top: 0;
+  transform: translateY(-17%);
+}
+
+.mainVisu {
+  background: url(../image/main-bg3.png) no-repeat center/ 100%;
+  position: relative;
+  padding-top: 70%;
+}
+
+.mainVisuText {
+  position: absolute;
+  width: 50%;
+  top: 20%;
+  left: 20%;
+  transform: translate(-20%, -20%);
+}
+.mainVisuText h3 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -3px;
+}
+.mainVisuText p {
+  padding-bottom: 0.5rem;
+  opacity: 1;
+  transition: 0.2s;
+}
+.btnCon a:first-of-type {
+  margin-right: 0.5rem;
+}
+.btnCon {
+  padding-top: 1vw;
+  display: flex;
+  align-items: center;
+}
+.btnCon a {
+  border: 1px solid #fff;
+  background-color: #fff;
+  display: flex;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+.btnCon a img {
+  width: 17px;
+}
+.btnCon a span {
+  padding-left: 0.5rem;
+  transform: translateY(3px);
+}
+
+/* section2 */
+.contentWrap {
+  border: 1px solid red;
+  transform: translateY(51px);
+}
+.contentWrap > div {
+  display: flex;
+}
+.contentLeft {
+  width: 50%;
+}
+.contentRight {
+  width: 50%;
+  border: 1px solid #fede22;
+}
+/* header반응형 */
+@media (max-width: 768px) {
+  .hd.on {
+    border-bottom: none;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    padding-top: 10px;
+  }
+  .hd.on .hd_wrap {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-center;
+  }
+
+  /* gnb */
+  .gnb_wrap {
+    display: none;
+  }
+
+  .hd.on .gnb_wrap {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+  }
+
+  .hd.on .gnb {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hd.on .gnb > li {
+    width: 100%;
+  }
+  .hd.on .gnb > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  .hd.on .gnb > li:hover .subGnb {
+    max-height: 800px;
+    padding: 0;
+    transition: max-height 0.4s, padding 0s;
+  }
+  /* sub_gnb 2dapth */
+  .hd.on .subGnb {
+    position: static;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    background-color: #ffdbdb;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .hd.on .inner_con {
+    max-width: var(--mx);
+    width: 100%;
+    display: block;
+    margin: 0;
+    background-color: inherit;
+  }
+  .hd.on .dapth3 {
+    display: none;
+  }
+
+  .pageBtn {
+    display: none;
+  }
+  .hd.on .pageBtn {
+    display: block;
+    position: absolute;
+    bottom: 17px;
+    right: 30px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    margin-right: 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.7px;
+  }
+  .hd button:nth-of-type(2) {
+    display: none;
+  }
+  .hd.on button:nth-of-type(2) {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+
+  .hamBtn {
+    display: block;
+    position: relative;
+  }
+  .hamBtn::before {
+    content: "\f0c9";
+    font-family: "Font Awesome 5 Free"; /*폰트어썸 fas, far 글꼴 연결*/
+    font-weight: 600;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.05rem;
+  }
+  .hd.on .hamBtn.on::before {
+    content: "\f00d";
+  }
+}
+
+/* mainVis 반응형 */
+@media (max-width: 530px) {
+  .mainVisuText {
+    transform: 0;
+    width: 100%;
+    transform: translate(-10%, -20%);
+  }
+  .mainVisuText h3 {
+    font-size: 1.5rem;
+  }
+  .mainVisuText p {
+    /* display: none; */
+    font-size: 0.75rem;
+  }
+  .btnCon a {
+    border: 1px solid #fff;
+    background-color: #fff;
+    display: flex;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+  .btnCon a img {
+    width: 12px;
+  }
+  .btnCon a span {
+    padding-left: 0.5rem;
+    transform: translateY(0px);
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 580px) {
+  .mainVisuText h3 {
+    font-size: 1.5rem;
+  }
+  .mainVisuText p {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@media (max-width: 340px) {
+  .mainVisuText h3 {
+    font-size: 1rem;
+  }
+  .mainVisuText p {
+    display: none;
+  }
 }
