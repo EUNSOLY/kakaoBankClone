@@ -197,8 +197,10 @@ img {
 
 /* section2 */
 .contentWrap {
+  padding: 2rem 0;
   border: 1px solid red;
   transform: translateY(51px);
+  overflow: hidden;
 }
 .contentWrap > div {
   display: flex;
@@ -208,10 +210,13 @@ img {
 }
 .contentRight {
   width: 50%;
-  border: 1px solid #fede22;
 }
 /* header반응형 */
 @media (max-width: 768px) {
+  .hd {
+    height: 50px;
+    padding-top: 0.5rem;
+  }
   .hd.on {
     border-bottom: none;
     background-color: #fff;
@@ -223,8 +228,8 @@ img {
   }
   .hd.on .hd_wrap {
     display: flex;
-    align-items: stretch;
-    justify-content: space-center;
+    align-items: center;
+    justify-content: space-between;
   }
 
   /* gnb */
