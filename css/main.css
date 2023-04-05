@@ -17,7 +17,9 @@ img {
   width: 100%;
   display: block;
 }
-
+.wrap {
+  overflow: hidden;
+}
 .inner {
   max-width: var(--mx);
   width: calc(100% - 1rem);
