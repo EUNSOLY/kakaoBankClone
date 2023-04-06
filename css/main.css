@@ -251,7 +251,7 @@ img {
     display: none;
   }
 
-  .hd.on .gnb_wrap {
+  .hd.on .gnb_wrap.on {
     display: block;
     position: absolute;
     top: 10%;
