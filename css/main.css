@@ -207,9 +207,23 @@ img {
 }
 .contentLeft {
   width: 50%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+.contentLeft img {
+  width: 80%;
 }
 .contentRight {
   width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+.contentRight > * {
+  width: 100%;
 }
 /* header반응형 */
 @media (max-width: 768px) {
@@ -334,6 +348,16 @@ img {
 }
 
 /* mainVis 반응형 */
+@media (max-width: 580px) {
+  .mainVisuText h3 {
+    font-size: 1.5rem;
+  }
+  .mainVisuText p {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
 @media (max-width: 530px) {
   .mainVisuText {
     transform: 0;
@@ -365,16 +389,7 @@ img {
     font-size: 0.75rem;
   }
 }
-@media (max-width: 580px) {
-  .mainVisuText h3 {
-    font-size: 1.5rem;
-  }
-  .mainVisuText p {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
+
 @media (max-width: 340px) {
   .mainVisuText h3 {
     font-size: 1rem;
