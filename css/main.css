@@ -1,13 +1,13 @@
 @charset "utf-8";
 @font-face {
-  font-family: "Dovemayo_gothic";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2")
-    format("woff2");
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 :root {
-  font-family: "Dovemayo_gothic";
+  font-family: "GmarketSansMedium";
   font-size: 16px;
   color: #232323;
   --mx: 1080px;
@@ -198,32 +198,63 @@ img {
 /* section2 */
 .contentWrap {
   padding: 2rem 0;
-  border: 1px solid red;
   transform: translateY(51px);
   overflow: hidden;
 }
 .contentWrap > div {
   display: flex;
 }
-.contentLeft {
+.contentWrap .contentLeft {
   width: 50%;
   padding: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 }
-.contentLeft img {
+.contentWrap .contentLeft img {
   width: 80%;
 }
-.contentRight {
+.contentWrap .contentRight {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-around;
+  align-content: center;
 }
-.contentRight > * {
+.contentWrap .contentRight > * {
   width: 100%;
+}
+.contentWrap .contentRight_tit {
+  padding: 0 0 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.contentWrap .contentRight_subtit {
+  color: #666666;
+  padding-bottom: 2rem;
+}
+.contentWrap .contentRightBtn {
+  display: flex;
+  align-items: center;
+  text-align: cneter;
+}
+.contentWrap .contentRightBtn span {
+  padding: 1rem 1.5rem;
+  background-color: #f6f6f6;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+/* section3 */
+.fixedContent {
+  padding: 2rem 0;
+  transform: translateY(51px);
+  overflow: hidden;
+  border: 1px solid dodgerblue;
+}
+.fixedContent > div {
+  display: flex;
+}
+footer {
+  transform: translateY(51px);
 }
 /* header반응형 */
 @media (max-width: 768px) {
@@ -389,12 +420,76 @@ img {
     font-size: 0.75rem;
   }
 }
-
 @media (max-width: 340px) {
   .mainVisuText h3 {
     font-size: 1rem;
   }
   .mainVisuText p {
     display: none;
+  }
+}
+/* section2 반응형 */
+@media (max-width: 768px) {
+  .contentWrap .contentLeft {
+    width: 70%;
+  }
+
+  .contentWrap .contentRight_tit {
+    font-size: 1.25rem;
+  }
+  .contentWrap .contentRight_subtit {
+    font-size: 0.75rem;
+  }
+
+  .contentWrap .contentRightBtn span {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 480px) {
+  .contentWrap > div {
+    flex-wrap: wrap;
+  }
+  .contentWrap .contentLeft {
+    width: 100%;
+  }
+  .contentWrap .contentRight {
+    width: 100%;
+    padding-top: 2rem;
+    transform: translateY(-20%);
+    position: relative;
+  }
+  .contentWrap .contentRight::before {
+    content: "\f005""\f005";
+    font-family: "Font Awesome 5 Free"; /*폰트어썸 fas, far 글꼴 연결*/
+    font-weight: 600;
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    transform: translate(-50%, 0) rotate(-20deg);
+    color: #ff5151;
+    font-size: 0.75rem;
+  }
+  .contentWrap .contentRight::after {
+    content: "\f005""\f005";
+    font-family: "Font Awesome 5 Free"; /*폰트어썸 fas, far 글꼴 연결*/
+    font-weight: 600;
+    position: absolute;
+    bottom: 18%;
+    right: 10%;
+    transform: translate(-50%, 0) rotate(-20deg);
+    color: #ff5151;
+    font-size: 0.75rem;
+  }
+
+  .contentWrap .contentRight_tit {
+    text-align: center;
+  }
+  .contentWrap .contentRight_subtit {
+    text-align: center;
+  }
+  .contentWrap .contentRightBtn {
+    justify-content: center;
   }
 }
