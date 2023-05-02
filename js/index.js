@@ -30,7 +30,18 @@ function scrollEventBootom() {
     Img.classList.add("on");
   }
 }
+function scrollEventStar() {
+  const section = document.querySelector(".section6");
+  let scroll = window.innerHeight + window.scrollY - 400;
+  let sectionHeight = section.offsetTop;
+  if (sectionHeight < scroll) {
+    section.classList.add("night");
+  } else {
+    section.classList.remove("night");
+  }
+}
 window.addEventListener("scroll", function () {
   scrollEvent();
   scrollEventBootom();
+  scrollEventStar();
 });
