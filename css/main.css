@@ -6,6 +6,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 :root {
   /* font-family: "GmarketSansMedium"; */
   font-family: "Noto Sans KR", sans-serif;
@@ -18,6 +19,9 @@ img {
   width: 100%;
   display: block;
 }
+::selection {
+  background: #ffe400;
+}
 .wrap {
   overflow: hidden;
 }
@@ -26,6 +30,24 @@ img {
   width: calc(100% - 1rem);
   margin: 0 auto;
 }
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  padding: 0 0 1rem;
+}
+.contentRightBtn {
+  display: flex;
+  align-items: center;
+  text-align: cneter;
+}
+.contentRightBtn span {
+  padding: 1rem 1.5rem;
+  background-color: #f6f6f6;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
 /* 커스텀 */
 /* header */
 .hd {
@@ -238,17 +260,7 @@ img {
   color: #666666;
   padding-bottom: 2rem;
 }
-.contentWrap .contentRightBtn {
-  display: flex;
-  align-items: center;
-  text-align: cneter;
-}
-.contentWrap .contentRightBtn span {
-  padding: 1rem 1.5rem;
-  background-color: #f6f6f6;
-  border-radius: 0.75rem;
-  font-size: 1rem;
-}
+
 /* 섹션2 */
 .fixedContent {
   padding: 2rem 0;
@@ -397,9 +409,10 @@ img {
 }
 
 .section6 .inner {
-  padding-top: 10rem;
+  padding-top: 7rem;
   color: #fff;
   position: relative;
+  text-align: center;
 }
 .section6 .sky {
   position: absolute;
@@ -410,13 +423,7 @@ img {
   height: 100%;
   transition: 1.5s;
 }
-.section6 h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  font-weight: 600;
-  line-height: 1.35;
-  padding: 0 0 1rem;
-}
+
 .section6 p {
   font-size: 0.85rem;
   line-height: 1.5;
@@ -439,7 +446,7 @@ img {
   justify-content: center;
 }
 .section6 .imgCon img {
-  width: 40%;
+  width: 35%;
 }
 .section6 .moon {
   position: absolute;
@@ -564,7 +571,42 @@ img {
   100% {
   }
 }
-footer {
+
+/* section7 */
+.section7 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.section7 h2 {
+  width: 100%;
+  padding: 3rem 0 1rem;
+}
+.section7 p {
+  width: 100%;
+  padding: 0 0 1rem;
+}
+.section7 a {
+}
+.section7 .slideWrap {
+  border: 4px solid dodgerblue;
+  width: 100%;
+}
+.section7 .slideWrap .innerCon {
+  margin: 0 auto;
+  width: 50%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ddd;
+}
+
+.section7 .slideCard:nth-of-type(3) ~ li {
+  display: none;
+}
+
+.section7 .slideWrap .innerCon footer {
   transform: translateY(101px);
 }
 
