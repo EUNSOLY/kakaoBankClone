@@ -54,11 +54,13 @@ const slide = document.querySelectorAll(".slideCard");
 const prevBtn = document.querySelector(".prevBtn");
 const nextBtn = document.querySelector(".nextBtn");
 
-// Card 개별 DOM 변수담기
+// card 리스트 정보 변수에 담기
 let list1 = document.querySelector(".slideCard:nth-of-type(1)");
 let list2 = document.querySelector(".slideCard:nth-of-type(2)");
 let list3 = document.querySelector(".slideCard:nth-of-type(3)");
 let list4 = document.querySelector(".slideCard:nth-of-type(4)");
+list2.style.cssText = `transform:scale(1.1); z-index:1;  transition:0.3s`;
+list3.style.cssText = `transform:scale(1); z-index:0;  transition:0.3s`;
 
 // 초기값
 let currentIndex = 0;
@@ -67,37 +69,31 @@ let slideWidth = slide[0].offsetWidth;
 
 // 이전 버튼 클릭 시
 
+// slide.forEach((item, i) => {
+//   item.style.cssText = `margin-right:-20px;`;
+// });
+
 const prevBtnFun = () => {
   list1 = document.querySelector(".slideCard:nth-of-type(1)");
   list2 = document.querySelector(".slideCard:nth-of-type(2)");
   list3 = document.querySelector(".slideCard:nth-of-type(3)");
   list4 = document.querySelector(".slideCard:nth-of-type(4)");
-  list2.style.cssText = `transform:scale(1.1); z-index:1; `;
-  list3.style.cssText = `transform:scale(1); z-index:0; `;
+  list2.style.cssText = `transform:scale(1.1); z-index:1;  transition:0.3s`;
+  list3.style.cssText = `transform:scale(1); z-index:0;  transition:0.3s`;
 
-  slideCon.style.cssText = `margin-left: -${slideWidth}px; transition:0.3s`;
-  list2.style.cssText = `transform:scale(1); z-index:0; transition:0.5s`;
-  list3.style.cssText = `transform:scale(1.1); z-index:1; transition: transform 0.5s, z-index 0s`;
+  slideCon.style.cssText = `margin-left: -${slideWidth}px; transition:0.7s`;
+  list2.style.cssText = `transform:scale(1); z-index:0; transition:0.3s`;
+  list3.style.cssText = `transform:scale(1.1); z-index:1; transition:0.3s`;
 
   setTimeout(() => {
     slideCon.appendChild(slideCon.firstElementChild);
     slideCon.style.cssText = `margin-left:0px;`;
-  }, 0);
+  }, 700);
+  // slide.forEach((item, i) => {
+  //   item.style.cssText = `transition: 1s;`;
+  // });
 };
-const nextBtnFun = () => {
-  slideCon.prepend(slideCon.lastElementChild);
-  list1 = document.querySelector(".slideCard:nth-of-type(1)");
-  list2 = document.querySelector(".slideCard:nth-of-type(2)");
-  list3 = document.querySelector(".slideCard:nth-of-type(3)");
-  list4 = document.querySelector(".slideCard:nth-of-type(4)");
-  list2.style.cssText = `transform:scale(1.1); z-index:1; transition: transform 0.5s, z-index 0s`;
-  list3.style.cssText = `transform:scale(1); z-index:0;  transition: transform 0.3s, z-index 0s`;
-  slideCon.style.cssText = `margin-left: -${slideWidth}px; transition:0`;
-
-  setTimeout(() => {
-    slideCon.style.cssText = `margin-left:0px;`;
-  }, 0);
-};
+const nextBtnFun = () => {};
 
 prevBtn.addEventListener("click", prevBtnFun);
 nextBtn.addEventListener("click", nextBtnFun);
